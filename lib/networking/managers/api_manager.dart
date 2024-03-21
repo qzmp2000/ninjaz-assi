@@ -1,4 +1,4 @@
-import 'package:assignment/configs/configs.dart';
+import 'package:assignment/configs/configurations.dart';
 import 'package:assignment/networking/parameters.dart';
 import 'package:http/http.dart';
 import 'package:assignment/utils/string_helper.dart';
