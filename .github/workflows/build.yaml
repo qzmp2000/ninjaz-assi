@@ -2,5 +2,6 @@ name: Builds - build Flutter APK and create github release
 on: [push, workflow_dispatch]
 jobs:
   drive:
+    runs-on: ubuntu-latest
     steps:
       - uses: Dank-del/flutter-build-and-publish-action@v1
