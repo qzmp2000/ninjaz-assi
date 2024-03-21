@@ -17,42 +17,41 @@ class PostsWidget extends StatefulWidget {
 }
 
 class PostsState extends State<PostsWidget> {
-  CacheManager _cacheManager = CacheManager();
-  List<Post> _items = List<Post>.empty(growable: true);
+  final CacheManager _cacheManager = CacheManager();
+  final List<Post> _items = List<Post>.empty(growable: true);
 
   int _page = 1;
   bool _hasMore = true;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: LoadMoreListView.builder(
-            hasMoreItem: _hasMore,
-            onLoadMore: () async {
-              await _getPosts();
-            },
-            onRefresh: () async {
-              setState(() {
-                _page = 1;
-                _hasMore = true;
-                _getPosts();
-              });
-            },
-            refreshColor: AppColors.secondary,
-            refreshBackgroundColor: AppColors.primary,
-            loadMoreWidget: Container(
-              margin: const EdgeInsets.all(20.0),
-              alignment: Alignment.center,
-              child: const CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation(AppColors.primary),
-              ),
-            ),
-            itemCount: _items.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: PostWidget(_items[index]));
-            }));
+    return LoadMoreListView.builder(
+        hasMoreItem: _hasMore,
+        onLoadMore: () async {
+          await _getPosts();
+        },
+        onRefresh: () async {
+          setState(() {
+            _page = 1;
+            _hasMore = true;
+            _getPosts();
+          });
+        },
+        refreshColor: AppColors.secondary,
+        refreshBackgroundColor: AppColors.primary,
+        loadMoreWidget: Container(
+          margin: const EdgeInsets.all(20.0),
+          alignment: Alignment.center,
+          child: const CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation(AppColors.primary),
+          ),
+        ),
+        itemCount: _items.length,
+        itemBuilder: (context, index) {
+          return Padding(
+              padding: const EdgeInsets.all(16),
+              child: PostWidget(_items[index]));
+        });
   }
 
   @override
@@ -73,7 +72,7 @@ class PostsState extends State<PostsWidget> {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(
                   backgroundColor: Colors.red,
-                  content: Center(child: Text(message!))))
+                  content: Center(child: Text(message))))
               .closed
               .then((value) => ScaffoldMessenger.of(context).clearSnackBars());
         }
@@ -96,7 +95,7 @@ class PostsState extends State<PostsWidget> {
           _items.clear();
         }
 
-        _items.addAll(posts!);
+        _items.addAll(posts);
         _page = nextPage;
         _hasMore = _items.length < total;
       });

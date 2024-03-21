@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:assignment/networking/api.dart';
 import 'package:assignment/networking/managers/api_manager.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 import '../beans/post.dart';
@@ -30,7 +31,9 @@ class PostsManager extends APIManager {
       posts = dataResponse.data;
       success = isSuccess(response: response);
       message = getMessage(response: response);
-    } catch (e) {}
+    } catch (e) {
+      debugPrint(e.toString());
+    }
 
     if (callback != null) {
       callback(page + 1, total, posts, success, message);

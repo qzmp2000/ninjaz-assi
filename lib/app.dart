@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CApp extends StatelessWidget {
-  CApp({super.key});
+  const CApp({super.key});
 
   static final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -15,7 +15,7 @@ class CApp extends StatelessWidget {
         onGenerateTitle: (context) {
           return localized()?.appTitle ?? "";
         },
-        home: HomeWidget(),
+        home: const HomeWidget(),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         navigatorKey: navigatorKey,

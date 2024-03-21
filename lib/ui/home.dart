@@ -18,7 +18,7 @@ class HomeState extends State<HomeWidget> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    PostsWidget(),
+    const PostsWidget(),
     const ProfileWidget(),
     const MoreWidget(),
   ];

@@ -1,6 +1,7 @@
+import 'package:realm_dart/realm.dart';
+
 import '../networking/beans/cached_post.dart';
 import '../networking/beans/post.dart';
-import 'package:realm_dart/realm.dart';
 
 class CacheManager {
   late Realm realm;
