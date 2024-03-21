@@ -14,6 +14,7 @@ class HomeWidget extends StatefulWidget {
   }
 }
 
+// Home State
 class HomeState extends State<HomeWidget> {
   int _selectedIndex = 0;
 
