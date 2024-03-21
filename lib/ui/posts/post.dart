@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:simple_tags/simple_tags.dart';
 
 class PostWidget extends StatefulWidget {
-  PostWidget(this.post, {super.key});
+  const PostWidget(this.post, {super.key});
 
-  Post post;
+  final Post post;
 
   @override
   State<PostWidget> createState() => _PostWidgetState();

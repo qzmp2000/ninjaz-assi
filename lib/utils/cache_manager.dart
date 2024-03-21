@@ -1,4 +1,4 @@
-import 'package:realm_dart/realm.dart';
+import 'package:realm/realm.dart';
 
 import '../networking/beans/cached_post.dart';
 import '../networking/beans/post.dart';
