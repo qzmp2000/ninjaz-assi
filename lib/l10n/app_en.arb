@@ -1,0 +1,12 @@
+{
+  "appTitle": "Ninjaz",
+  "home": "Home",
+  "posts": "Posts",
+  "tab1": "Tab 1",
+  "tab2": "Tab 2",
+  "profile": "Profile",
+  "more": "More",
+  "errorSomethingWentWrong": "Error something went wrong",
+  "checkYourInternetConnect": "Check your internet connection",
+  "dataRetrieved": "Data retrieved"
+}
